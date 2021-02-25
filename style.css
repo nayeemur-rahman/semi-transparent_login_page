@@ -1,0 +1,152 @@
+:root{
+    --primary-light-color: rgb(226, 243, 245);
+    --primary-dark-color: rgb(64, 10, 53);
+    --secondary-color: rgb(237, 112, 239);
+    --container-background: rgba(64, 10, 53, 0.5);
+    --user-icon: rgba(226, 243, 245, 0.5);
+    --user-icon-background: rgba(226, 243, 245, 0.25);
+    --login-headline-color: rgba(226, 243, 245, 0.75);
+    --user_pass_placeholder: rgba(226, 243, 245, 0.5);
+    --user_pass_placeholder--onhover: rgba(237, 112, 239, 0.75);
+    --user_pass_placeholder--onfocus: rgba(226, 243, 245, 0.25);
+}
+*{
+    font-family: 'Montserrat';
+    margin: 0;
+    opacity: 1;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    
+    display: grid;
+    place-items: center;
+
+    background: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+}
+#ltp-toggler{
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: var(--primary-dark-color);
+    background-color: transparent;
+    /* opacity: 0.75; */
+
+    display: block;
+    padding: 0.3rem 0.6rem;
+    
+    border: 2px solid var(--primary-dark-color);
+    border-radius: 1rem;
+    outline: none;
+
+    cursor: pointer;
+
+    transition: all 300ms;
+}
+#ltp-toggler:hover{
+    background-color: var(--primary-dark-color);
+    color: var(--primary-light-color);
+}
+
+#container{
+    background-color: var(--container-background);
+
+    display: grid;
+    row-gap: 2.5rem;
+    place-items: center;
+    
+    padding: 3rem;
+    border-radius: 1rem;
+}
+#container.landscape{
+    column-gap: 2.75rem;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr;
+}
+#container.landscape #login-form{
+    row-gap: 1.5rem;
+}
+#login-form-header{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    place-items: center;
+}
+#user-ico{
+    color: var(--user-icon);
+    background-color: var(--user-icon-background);
+
+    font-size: 7rem;
+
+    height: 11.5rem;
+    width: 11.5rem;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+}
+#login-headline{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--login-headline-color);
+    cursor: pointer;
+}
+#login-form{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1rem;
+    place-items: center;
+}
+#username,
+#password,
+#login-btn{
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--secondary-color);
+    background-color: transparent!important;
+    
+    display: block;
+    padding: 1rem 2rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4rem;
+    outline: none;
+    
+    cursor: pointer;
+    transition: all 300ms;
+}
+#username:focus,
+#password:focus{
+    cursor: text;
+}
+#username::placeholder,
+#password::placeholder{
+    color: var(--user_pass_placeholder);
+    transition: all 300ms;
+}
+#username:hover::placeholder,
+#password:hover::placeholder{
+    color: var(--user_pass_placeholder--onhover);
+}
+#username:focus::placeholder,
+#password:focus::placeholder{
+    color: var(--user_pass_placeholder--onfocus);
+}
+
+#login-btn{
+    width: 100%;
+}
+#login-btn:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-light-color);
+}
