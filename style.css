@@ -147,6 +147,6 @@ body{
     width: 100%;
 }
 #login-btn:hover{
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color)!important;
     color: var(--primary-light-color);
 }
