@@ -1,1 +1,1 @@
-# semi-transparent_login_page
+# semi-transparent login page
