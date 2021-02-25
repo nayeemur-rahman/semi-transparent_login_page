@@ -3,8 +3,8 @@ const usernameInputBox = document.querySelector("#username");
 const passwordInputBox = document.querySelector("#password");
 const submitBtn = document.querySelector("#login-btn");
 const ltpTogglerBtn = document.querySelector("#ltp-toggler");
-loginHeadline.addEventListener("click", ()=>{
-    usernameInputBox.focus();
+loginHeadline.addEventListener("click", () => {
+  usernameInputBox.focus();
 });
 
 usernameInputBox.addEventListener("keypress", (event) => {
@@ -12,8 +12,8 @@ usernameInputBox.addEventListener("keypress", (event) => {
   if (event.keyCode === 13) {
     // Cancel the default action, if needed
     event.preventDefault();
-    if (usernameInputBox.value == ''){
-        return;
+    if (usernameInputBox.value == "") {
+      return;
     }
     passwordInputBox.focus();
   }
@@ -23,20 +23,20 @@ passwordInputBox.addEventListener("keypress", (event) => {
   if (event.keyCode === 13) {
     // Cancel the default action, if needed
     event.preventDefault();
-    if (usernameInputBox.value == '' || passwordInputBox.value.length < 6){
-        return;
-    }
-    else{
-        submitBtn.click();
+    if (usernameInputBox.value == "" || passwordInputBox.value.length < 6) {
+      return;
+    } else {
+      submitBtn.click();
     }
   }
 });
-ltpTogglerBtn.addEventListener("click", ()=>{
+ltpTogglerBtn.addEventListener("click", () => {
   const container = document.querySelector("#container").classList;
-  if (container.contains("landscape")){
+  if (container.contains("landscape")) {
     container.remove("landscape");
-  }
-  else{
+    ltpTogglerBtn.innerHTML = "Landscape<br>view";
+  } else {
     container.add("landscape");
+    ltpTogglerBtn.innerHTML = "Portrait<br>view";
   }
-})
+});
